@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Login, singup and recovery forms</title>
+  <link rel="stylesheet" href="../css/login.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<body>
+  <div class="container">
+    <form class="vldform vldauth" action="login.php" method="POST">
+      <h1>Log in</h1>
+      <input class="vldform__textbox" type="text" name="username" placeholder="Username" required>
+      <input class="vldform__textbox" type="password" name="pass" id="" placeholder="Password" required>
+      <a class="vldform__recoverypassword" href="#" onclick="showrecoveryform()">Forgot password?</a>
+      <input class="vldform__button" type="submit" value="Log in">
+      <p class="vldform__signup">Don't have account?
+        <a class="vldform__signuplink" href="#" onclick="showregform()">Sign up</a>
+      </p>
+    </form>
+  </div>
+  <div class="container">
+    <form class="vldform vldreg" action="register.php" method="POST">
+        <h1>Sign up</h1>
+        <input class="vldform__textbox" type="text" name="username" placeholder="Username" required>
+        <input class="vldform__textbox" type="email" name="email" id="" placeholder="Email" required>
+        <input class="vldform__textbox" type="password" name="pass" id="" placeholder="Password" required>
+        <input class="vldform__textbox" type="password" name="pass2" id="" placeholder="Password again" required>
+        <input class="vldform__button" type="submit" value="Sign up">
+        <p class="vldform__signup">You already have account?
+          <a href="#" onclick="showauthform()">Log in</a>
+        </p>
+      <small>designed by<strong><a href="#">Booklife</a></strong></small>
+    </form>
+  </div>
+
+  <form class="vldform vldrecpass" action="recovery.php" method="POST">
+    <h1>Password recovery</h1>
+    <input class="vldform__textbox" type="email" name="email" id="" placeholder="Email" required>
+    <input class="vldform__button" type="submit" value="Recovery">
+  </form>
+</body>
+<!-- partial -->
+  <script  src="../js/login.js"></script>
+
+</body>
+</html>

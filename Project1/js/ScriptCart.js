@@ -104,14 +104,14 @@ var shoppingCart = (function() {
     }
     return Number(totalCart.toFixed(2));
   }
-    // tax
-    obj.tax = function() {
-        var tax = 0;
-        for(var item in cart) {
-            tax= totalCart ()*.085;
-        }
-        return tax;
-    }
+  // tax
+  obj.tax = function() {
+      var tax = 0;
+      for(var item in cart) {
+          tax= totalCart ()*.085;
+      }
+      return tax;
+  }
   // List cart
   obj.listCart = function() {
     var cartCopy = [];
@@ -159,8 +159,19 @@ $('.add-to-cart').click(function(event) {
 $('.clear-cart').click(function() {
   shoppingCart.clearCart();
   displayCart();
-});
 
+});
+  //--------------- Final total ----------
+  function shipping(val){
+    var totalTest = Number(shoppingCart.totalCart() + +val).toFixed(2) ;
+    finalTotal = totalTest;
+    console.log('this is val: ', totalTest)
+    return totalTest
+  }
+  console.log(finalTotal)
+// //----------------------
+
+// console.log("this is my shipping", shippingPrice())
 
 function displayCart() {
   var cartArray = shoppingCart.listCart();
@@ -180,6 +191,7 @@ function displayCart() {
   $('.show-cart').html(output);
   $('.total-cart').html(shoppingCart.totalCart());
   $('.total-count').html(shoppingCart.totalCount());
+  $('.total').html(finalTotal);
 }
 
 // Delete item button

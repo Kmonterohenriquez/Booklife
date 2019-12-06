@@ -155,14 +155,21 @@
                 <div>TAX(8.5%): <span class="tax"></span></div>
                 <div>Shipping Options: <span class="tax"></span></div>
                 <div class="con">
-                    <div class="dropdown">
-                        <div class="caption">Standard-$0</div>
+                    <!-- <div class="dropdown">
+                            <div class="caption">Type of shipping</div>
                         <div class="list">
-                            <div class="item">Express-$15</div>
-                            <div class="item">Next Day-$20</div>
-                        </div>
+                            <div class="item" data-price="0">Standard-$0</div>
+                            <div class="item" data-price="15">Express-$15</div>
+                            <div class="item" data-price="20">Next Day-$20</div>
+                        </div> -->
+                        <select name="shipping" id="shipping" onchange="shipping(value)">
+                            <option value='0'>Standard-$0</option>
+                            <option value="15">Express-$15</option>
+                            <option value='20'>Next Day-$20</option>
+                        </select>
+                        
                     </div></br>
-                    <div>Total: <span class="tax"></span></div>
+                    <div>Total: $<span class="total"></span></div>
                 </div>
 
             </div>
