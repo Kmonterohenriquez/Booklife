@@ -30,6 +30,12 @@
     <!-- Main Stylesheet File -->
     <link href="../css/style-red.css" rel="stylesheet">
 
+    <style>
+        .alert-success{
+            margin-top: 75px;
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -62,6 +68,9 @@
     </div>
 </nav>
 <!--/ Nav End /-->
+<div class="alert alert-success fixed-top" role="alert">
+    This is a success alert—check it out!
+  </div>
 
 <!--/ Intro Skew Star /-->
 <div class="intro intro-single route bg-image" style="background-image: url(../img/overlay-bg.jpg)">
@@ -134,7 +143,8 @@
 
     </div>
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cart">Cart (<span class="total-count"></span>)</button>
-    <button class="clear-cart btn btn-danger">Clear Cart</button></div>
+    <button class="clear-cart btn btn-danger">Clear Cart</button>
+</div>
 </div>
 
 <!-- Modal -->
@@ -155,31 +165,25 @@
                 <div>TAX(8.5%): <span class="tax"></span></div>
                 <div>Shipping Options: <span class="tax"></span></div>
                 <div class="con">
-                    <!-- <div class="dropdown">
-                            <div class="caption">Type of shipping</div>
-                        <div class="list">
-                            <div class="item" data-price="0">Standard-$0</div>
-                            <div class="item" data-price="15">Express-$15</div>
-                            <div class="item" data-price="20">Next Day-$20</div>
-                        </div> -->
-                        <select name="shipping" id="shipping" onchange="shipping(value)">
-                            <option value='0'>Standard-$0</option>
-                            <option value="15">Express-$15</option>
-                            <option value='20'>Next Day-$20</option>
-                        </select>
-                        
-                    </div></br>
-                    <div>Total: $<span class="total"></span></div>
+                    <select name="shipping" id="shipping" onchange="selectedShipping()">
+                        <option value='0'>Standard-$0</option>
+                        <option value="15">Express-$15</option>
+                        <option value='20'>Next Day-$20</option>
+                    </select></br>
+                    <div>Total: <span class="tax"id='total'></span></div>
                 </div>
 
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Order now</button>
+                <a href="./checkout.html"><button type="button" class="clear-cart btn btn-primary">Order now</button></a>
             </div>
         </div>
     </div>
 </div>
+
+
+
 <section class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: url(../img/overlay-bg.jpg)">
     <div class="overlay-mf"></div>
     <footer>
@@ -188,15 +192,7 @@
                 <div class="col-sm-12">
                     <div class="copyright-box">
                         <p class="copyright">&copy; Copyright <strong>BookLife</strong>. All Rights Reserved</p>
-                        <div class="credits">
-                            <!--
-                              All the links in the footer should remain intact.
-                              You can delete the links only if you purchased the pro version.
-                              Licensing information: https://bootstrapmade.com/license/
-                              Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=DevFolio
-                            -->
-                            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-                        </div>
+                        
                     </div>
                 </div>
             </div>

@@ -154,7 +154,9 @@
 
 </div>
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cart">Cart (<span class="total-count"></span>)</button>
-    <button class="clear-cart btn btn-danger">Clear Cart</button></div>
+    <button class="clear-cart btn btn-danger">Clear Cart</button>
+</div>
+
 </div>
 
 <!-- Modal -->
@@ -175,20 +177,18 @@
                 <div>TAX(8.5%): <span class="tax"></span></div>
                 <div>Shipping Options: <span class="tax"></span></div>
                 <div class="con">
-                    <div class="dropdown">
-                        <div class="caption">Standard-$0</div>
-                        <div class="list">
-                            <div class="item">Express-$15</div>
-                            <div class="item">Next Day-$20</div>
-                             </div>
-                    </div></br>
-                    <div>Total: <span class="tax"></span></div>
+                    <select name="shipping" id="shipping" onchange="selectedShipping()">
+                        <option value='0'>Standard-$0</option>
+                        <option value="15">Express-$15</option>
+                        <option value='20'>Next Day-$20</option>
+                    </select></br>
+                    <div>Total: <span class="tax"id='total'></span></div>
                 </div>
 
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Order now</button>
+                <a href="./checkout.html"><button type="button" class="clear-cart btn btn-primary">Order now</button></a>
             </div>
         </div>
     </div>
@@ -201,10 +201,7 @@
                 <div class="col-sm-12">
                     <div class="copyright-box">
                         <p class="copyright">&copy; Copyright <strong>BookLife</strong>. All Rights Reserved</p>
-                        <div class="credits">
-
-                            Designed by BookLife
-                        </div>
+                        
                     </div>
                 </div>
             </div>

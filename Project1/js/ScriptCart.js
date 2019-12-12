@@ -159,25 +159,27 @@ $('.add-to-cart').click(function(event) {
 $('.clear-cart').click(function() {
   shoppingCart.clearCart();
   displayCart();
-
+  
 });
-  //--------------- Final total ----------
-  function shipping(val){
-    var totalTest = Number(shoppingCart.totalCart() + +val).toFixed(2) ;
-    finalTotal = totalTest;
-    console.log('this is val: ', totalTest)
-    return totalTest
-  }
-  console.log(finalTotal)
-// //----------------------
 
-// console.log("this is my shipping", shippingPrice())
 
-function displayCart() {
-  var cartArray = shoppingCart.listCart();
-  var output = "";
-  for(var i in cartArray) {
-    output += "<tr>"
+function selectedShipping (){
+  var selector = document.getElementById('shipping');
+  var value = selector.options[selector.selectedIndex].value;
+  document.getElementById('total').innerHTML = Number(shoppingCart.totalCart() + +value).toFixed(2);
+  return value
+}
+console.log(selectedShipping())
+  // console.log("this is my shipping", shippingPrice())
+
+  function showSuccessMsg(){
+    document.querySelector(".alert-success").style.display= 'block';
+}
+  function displayCart() {
+    var cartArray = shoppingCart.listCart();
+    var output = "";
+    for(var i in cartArray) {
+      output += "<tr>"
       + "<td>" + cartArray[i].name + "</td>"
       + "<td>(" + cartArray[i].price + ")</td>"
       + "<td><div class='input-group'>"
@@ -187,12 +189,12 @@ function displayCart() {
       + " = "
       + "<td>" + cartArray[i].total + "</td>"
       +  "</tr>";
+    }
+    $('.show-cart').html(output);
+    $('.total-cart').html(shoppingCart.totalCart());
+    $('.total-count').html(shoppingCart.totalCount());
+    $('.total').html(selectedShipping());
   }
-  $('.show-cart').html(output);
-  $('.total-cart').html(shoppingCart.totalCart());
-  $('.total-count').html(shoppingCart.totalCount());
-  $('.total').html(finalTotal);
-}
 
 // Delete item button
 
