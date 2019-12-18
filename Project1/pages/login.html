@@ -10,33 +10,32 @@
 <!-- partial:index.partial.html -->
 <body>
   <div class="container">
-    <form class="vldform vldauth" action="login.php" method="POST">
+    <form class="vldform vldauth" >
       <h1>Log in</h1>
-      <input class="vldform__textbox" type="text" name="username" placeholder="Username" required>
-      <input class="vldform__textbox" type="password" name="pass" id="" placeholder="Password" required>
+      <input class="vldform__textbox" type="text" name="username" onclick='handleInputLogin(event)'placeholder="Username" required>
+      <input class="vldform__textbox" type="password" name="password" onclick='handleInputLogin(event)' id="" placeholder="Password" required>
       <a class="vldform__recoverypassword" href="#" onclick="showrecoveryform()">Forgot password?</a>
-      <input class="vldform__button" type="submit" value="Log in">
+      <button class="vldform__button" ><a href="../index.html">Log In</a></button>
       <p class="vldform__signup">Don't have account?
-        <a class="vldform__signuplink" href="#" onclick="showregform()">Sign up</a>
+        <a class="vldform__signuplink" href="#">Sign up</a>
       </p>
     </form>
   </div>
   <div class="container">
-    <form class="vldform vldreg" action="register.php" method="POST">
+    <form class="vldform vldreg"  onsubmit="showauthform()">
         <h1>Sign up</h1>
-        <input class="vldform__textbox" type="text" name="username" placeholder="Username" required>
-        <input class="vldform__textbox" type="email" name="email" id="" placeholder="Email" required>
-        <input class="vldform__textbox" type="password" name="pass" id="" placeholder="Password" required>
-        <input class="vldform__textbox" type="password" name="pass2" id="" placeholder="Password again" required>
-        <input class="vldform__button" type="submit" value="Sign up">
+        <input class="vldform__textbox" onchange='handleInput(event)'type="text" name="username" placeholder="Username" required>
+        <input class="vldform__textbox" onchange='handleInput(event)'type="email" name="email"  placeholder="Email" required>
+        <input class="vldform__textbox" onchange='handleInput(event)' type="password" name="password"  placeholder="Password" required>
+        <input class="vldform__button" type="submit"value="Sign up">
         <p class="vldform__signup">You already have account?
           <a href="#" onclick="showauthform()">Log in</a>
         </p>
-      <small>designed by<strong><a href="#">Booklife</a></strong></small>
+      <small>designed by<strong> Booklife</strong></small>
     </form>
   </div>
 
-  <form class="vldform vldrecpass" action="recovery.php" method="POST">
+  <form class="vldform vldrecpass" method="POST">
     <h1>Password recovery</h1>
     <input class="vldform__textbox" type="email" name="email" id="" placeholder="Email" required>
     <input class="vldform__button" type="submit" value="Recovery">
@@ -44,6 +43,6 @@
 </body>
 <!-- partial -->
   <script  src="../js/login.js"></script>
-
+  <script src=''></script>
 </body>
 </html>
